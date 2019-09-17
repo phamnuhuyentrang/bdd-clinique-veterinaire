@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="traitements">
+            <oneOrMore>
+                <element name="traitement">
+                    <element name="code">
+                        <data type="integer">
+                        </data>
+                    </element>
+                    <element name="debut">
+                        <text/>
+                    </element>
+                    <element name="duree">
+                        <data type="integer">
+                        </data>
+                    </element>
+                    <element name="nom">
+                        <text/>
+                    </element>
+                    <element name="veterinaire">
+                        <element name="nom">
+                            <text/>
+                        </element>
+                    </element>
+                    <element name="medicaments">
+                        <oneOrMore>
+                            <element name="medicament">
+                                <element name="nom">
+                                    <text/>
+                                </element>
+                                <element name="quantite">
+                                    <data type="integer">
+                                    </data>
+                                </element>
+                            </element>
+                        </oneOrMore>
+                    </element>
+                </element>
+            </oneOrMore>
+        </element>
+    </start>
+</grammar>

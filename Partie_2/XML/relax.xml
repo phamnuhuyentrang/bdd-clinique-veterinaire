@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="projet.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<traitements>
+    <traitement>
+        <code>1</code>
+        <debut>08:00:00</debut>
+        <duree>1</duree>
+        <nom>Optique</nom>
+        <veterinaire>
+            <nom>Mohamed</nom>
+        </veterinaire>
+        <medicaments>
+            <medicament>
+                <nom>Vitamin D</nom>
+                <quantite>4</quantite>
+            </medicament>
+        </medicaments>
+    </traitement>
+    <traitement>
+        <code>2</code>
+        <debut>10:00:00</debut>
+        <duree>2</duree>
+        <nom>Osteopathie</nom>
+        <veterinaire>
+            <nom>Triet</nom>
+        </veterinaire>
+        <medicaments>
+            <medicament>
+                <nom>Omega 3</nom>
+                <quantite>5</quantite>
+            </medicament>
+        </medicaments>
+    </traitement>
+    <traitement>
+        <code>3</code>
+        <debut>13:00:00</debut>
+        <duree>3</duree>
+        <nom>Soin de ventre</nom>
+        <veterinaire>
+            <nom>Pham</nom>
+        </veterinaire>
+        <medicaments>
+            <medicament>
+                <nom>Vitamin A</nom>
+                <quantite>4</quantite>
+            </medicament>
+        </medicaments>
+    </traitement>
+    <traitement>
+        <code>4</code>
+        <debut>17:00:00</debut>
+        <duree>4</duree>
+        <nom>Soin des yeux</nom>
+        <veterinaire>
+            <nom>Nguyen</nom>
+        </veterinaire>
+        <medicaments>
+            <medicament>
+                <nom>Vitamin B</nom>
+                <quantite>6</quantite>
+            </medicament>
+        </medicaments>
+    </traitement>
+    <traitement>
+        <code>5</code>
+        <debut>19:00:00</debut>
+        <duree>5</duree>
+        <nom>Traitement général</nom>
+        <veterinaire>
+            <nom>Triet</nom>
+        </veterinaire>
+        <medicaments>
+            <medicament>
+                <nom>Omega 3</nom>
+                <quantite>8</quantite>
+            </medicament>
+            <medicament>
+                <nom>Vitamin D</nom>
+                <quantite>2</quantite>
+            </medicament>
+        </medicaments>
+    </traitement>   
+</traitements>
