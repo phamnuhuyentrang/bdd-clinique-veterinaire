@@ -1,0 +1,60 @@
+// Clients
+
+CREATE (c1:client {nom:"Nguyen" , prenom:"Triet" , naissance:"1998-06-12" , adresse:"15 Rue Winston Churchill" , telephone:"0698593783"})
+CREATE (c2:client {nom:"Nguyen" , prenom:"Dung" , naissance:"1998-10-22" , adresse:"1 Rue de Paris" , telephone:"0697142635"})
+CREATE (c3:client {nom:"Lafond" , prenom:"Colin" , naissance:"1998-01-01" , adresse:"Compiegne" , telephone:"0123456789"})
+CREATE (c4:client {nom:"Bennis" , prenom:"Saad" , naissance:"1998-02-12" , adresse:"France" , telephone:"0123456778"})
+CREATE (c5:client {nom:"Nguyen" , prenom:"Bo" , naissance:"1998-08-12" , adresse:"Delaidde" , telephone:"0987654321"})
+
+
+// Animals
+
+CREATE (a1:animal {nom:"Phe" , poids:20 , taille:20 , naissance:"2008-06-01" , espece:'Chien' , classe:'Mammifere'})
+CREATE (a2:animal {nom:"KiKi" , poids:30 , taille:25 , naissance:"2006-06-01" , espece:'Chat' , classe:'Mammifere'})
+CREATE (a3:animal {nom:"Nemo" , poids:5 , taille:5 , naissance:"2001-01-01" , espece:'Poisson' , classe:'Autres'})
+CREATE (a4:animal {nom:"Jason" , poids:10 , taille:10 , naissance:"2009-08-01" , espece:'Perrot' , classe:'Oiseaux'})
+CREATE (a5:animal {nom:"Triet" , poids:4 , taille:4 , naissance:"2010-02-01" , espece:'Sacarabée' , classe:'Reptiles'})
+
+// Clients possède animals
+
+CREATE (c2)-[:possède]->(a1)
+CREATE (c1)-[:possède]->(a2)
+CREATE (c5)-[:possède]->(a3)
+CREATE (c3)-[:possède]->(a4)
+CREATE (c4)-[:possède]->(a5)
+
+// Medicaments
+
+CREATE (m1:medicament {nom:"Vitamin A" , description:"Bon pour yeux" , effets_secondaire:"Pas bon pour bebe et pour female pregnant"})
+CREATE (m2:medicament {nom:"Vitamin D" , description:"Bon pour os" , effets_secondaire:"Pas bon pour female pregnant"})
+CREATE (m3:medicament {nom:"Vitamin B" , description:"Bon pour ventre" , effets_secondaire:"Pas bon pour female pregnant"})
+CREATE (m4:medicament {nom:"Omega 3" , description:"Vitamin A et D" , effets_secondaire:"Pas bon pour bebe"})
+
+// Traitements
+
+CREATE (t1:traitement {debut:"08:00:00" , duree:"01:00:00" , description:"Optique"})
+CREATE (t2:traitement {debut:"10:00:00" , duree:"01:30:00" , description:"Osteopathie"})
+CREATE (t3:traitement {debut:"13:00:00" , duree:"02:10:00" , description:"Soin de ventre"})
+CREATE (t4:traitement {debut:"17:00:00" , duree:"00:30:00" , description:"Soin des yeux"})
+CREATE (t5:traitement {debut:"19:00:00" , duree:"01:00:00" , description:"Traitement général"})
+
+// Traitements pour un animal
+
+CREATE (a1)-[:est_traité]->(t1)
+CREATE (a2)-[:est_traité]->(t2)
+CREATE (a3)-[:est_traité]->(t5)
+CREATE (a4)-[:est_traité]->(t4)
+CREATE (a5)-[:est_traité]->(t3)
+
+// Medicaments pour un traitement
+
+CREATE (t2)-[:besoin {qté:4}]->(m2)
+CREATE (t2)-[:besoin {qté:5}]->(m4)
+CREATE (t1)-[:besoin {qté:6}]->(m4)
+CREATE (t1)-[:besoin {qté:2}]->(m1)
+CREATE (t3)-[:besoin {qté:6}]->(m3)
+CREATE (t4)-[:besoin {qté:8}]->(m4)
+CREATE (t4)-[:besoin {qté:3}]->(m2)
+CREATE (t5)-[:besoin {qté:2}]->(m1)
+CREATE (t5)-[:besoin {qté:4}]->(m2)
+CREATE (t5)-[:besoin {qté:3}]->(m3)
