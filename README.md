@@ -2,6 +2,7 @@
 
 ## Description
 Projet académique de matière NF17 - Conception de bases de données relationnelles et non relationnelles
+
 L'objectif du projet est de réaliser une application qui permet d'ajouter, de modifier, de supprimer les informations de
 clients, vétérinaires, assistants, animals, médicaments et séances de traitement; et aussi de regarder les
 statistics du nombre de médicaments utilisés par une espèce animale par jour, nombre de médicaments utlisés par jour mise en
