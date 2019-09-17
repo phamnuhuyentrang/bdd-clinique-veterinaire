@@ -1,0 +1,109 @@
+@startuml
+hide circle
+hide empty members
+
+note "On suppose qu'un traitement\nest prescrit par un seul veterinaire \net les assistants ont aucune fonction." as N1
+note "On suppose qu'un médicament\n correspond à une molécule" as N2
+
+note left of Personnel
+	Le numéro de téléphone est 
+	composé de 10 chiffres. (même chose pour client)
+endnote
+
+class Personne <<Abstract>> {
+	nom : string {key}
+	prenom : string {key}
+	date de naissance : date
+	adresse : string
+	numero de telephone : string
+	
+}
+
+class Client 
+
+class Personnel <<Abstract>>
+
+class Veterinaire 
+
+class Assistant
+
+class Classe {
+	nomClasse : string {key}
+}
+class Espece {
+	nomEspece : string {key}
+}
+
+class Animal {
+	nom : string {key}
+	poids : float
+	taille : float
+	naissance : date
+}
+note right of Animal 
+	La date de naissance peut-etre
+	une annee ou inconnue
+	Le poids (en kilogramme) et la taille (en cm) >0 
+endnote
+
+class Traitement {
+	nom: string {key}
+	debut : date
+	duree : int
+	nbJournalier : int
+}
+
+class Medicament {
+	nomMolecule : string {key}
+	description : string
+	bool espece_autoriser(INPUT Animal.espece)
+}
+
+class Effet_secondaire {
+	description: string 
+	code : string {key}
+	
+}
+
+
+
+note left of Medicament
+	Si l'animal peut prendre
+	le médicament, espece_autoriser()
+	renvoit vrai. Faux sinon.
+endnote
+
+Medicament .. N2
+
+note "........{XOR}........" as N3
+
+Personnel <|-- Veterinaire
+Personnel <|-- Assistant
+Personne <|-- Personnel
+Personne <|-- Client
+
+Assistant .. N3
+N3 .. Veterinaire
+
+
+Veterinaire "1" -- "*" Traitement : prescrit >
+Veterinaire .. N1
+N1 .. Traitement
+
+Animal "1..*" -- "1" Client : possede <
+Traitement "*" -- "1" Animal : prescrit à >
+Traitement "*" -- "*" Medicament : associé à >
+(Traitement, Medicament) .. Traitement_Medicament
+
+class Traitement_Medicament{
+    nbjournalier: int   
+}    
+
+Personnel "1..*" -- "1" Classe : spécialisé >
+Classe "1" -- "*" Espece : appartient <
+Espece "*" -- "*" Medicament : peut prendre >
+Espece "1" -- "*" Animal : appartient <
+Medicament "*" -- "*" Effet_secondaire : provoque <
+
+
+@enduml
