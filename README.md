@@ -9,5 +9,6 @@ ordre selon le nom de molécule
 Pour plus d'informations, veuillez lire note de clarification: https://github.com/phamnuhuyentrang/bdd-clinique-veterinaire/blob/master/Partie_1/NDC.md
 
 
-# Auteur
-Van-Triet NGUYEN, Nu-Huyen-Trang PHAM, Colin LAFOND, Bennis SAAD
+# Auteurs
+Van-Triet NGUYEN, Nu-Huyen-Trang PHAM, Colin LAFOND, Bennis SAAD: Partie 1
+Van-Triet NGUYEN, Nu-Huyen-Trang PHAM: Partie 2
