@@ -1,5 +1,5 @@
 # Description
-Projet académique de matière NF17 - Base de données pour une clinique vétérinaire
+Projet académique de matière NF17 (Conception de bases de données relationnelles et non relationnelles) - Base de données pour une clinique vétérinaire
 
 L'objectif du projet est de réaliser une application qui permet d'ajouter, de modifier, de supprimer les informations de
 clients, vétérinaires, assistants, animals, médicaments et séances de traitement; et aussi de regarder les
