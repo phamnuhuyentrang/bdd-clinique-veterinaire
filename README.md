@@ -11,4 +11,5 @@ Pour plus d'informations, veuillez lire note de clarification: https://github.co
 
 # Auteurs
 Van-Triet NGUYEN, Nu-Huyen-Trang PHAM, Colin LAFOND, Bennis SAAD: Partie 1
+
 Van-Triet NGUYEN, Nu-Huyen-Trang PHAM: Partie 2
